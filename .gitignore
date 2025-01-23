@@ -1,0 +1,73 @@
+# Ignore build directory
+build/
+Build/
+build-win/
+build-macos/
+
+
+# Ignore CMake-generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore compiled object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Ignore executable files
+*.out
+*.exe
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.pdb # Debug database for Visual Studio
+*.ilk # Incremental linker file
+
+# Ignore Visual Studio-specific files
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+*.sln
+*.suo
+*.ncb
+*.db
+*.opendb
+*.tlog
+*.log
+*.idb
+
+# Ignore Windows system files
+Thumbs.db
+*.DS_Store
+desktop.ini
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore backup files
+*.bak
+*.swp
+*~
+*.orig
+
+# Ignore user-specific files
+*.user
+
+# Ignore IDE/project-specific files
+.idea/
+.vscode/
+*.code-workspace
+
+# Ignore package manager files
+.vcpkg/
+node_modules/
+
+# Ignore test outputs
+Testing/
+CTestTestfile.cmake
