@@ -1,6 +1,6 @@
 #include <iostream>
 #include <thread>
-#include "runtime/heartbeat.hpp"
+#include "runtime/Heartbeat.hpp"
 
 int main()
 {
@@ -10,7 +10,6 @@ int main()
     {
         heartbeat.runPulse(); // Correct function call
 
-        std::cout << "Beat: " << heartbeat.getIsPulse() << std::endl;
         std::cout << "Heartbeat: " << heartbeat.getPulse() << std::endl;
 
         // Adding a delay to prevent excessive CPU usage

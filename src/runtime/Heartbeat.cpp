@@ -1,4 +1,4 @@
-#include "heartbeat.hpp"
+#include "Heartbeat.hpp"
 #include <bits/this_thread_sleep.h>
 
 void Heartbeat::runPulse() {
