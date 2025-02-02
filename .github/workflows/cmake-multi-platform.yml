@@ -1,6 +1,6 @@
 # This starter workflow is for a CMake project running on multiple platforms. There is a different starter workflow if you just want a single platform.
 # See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-single-platform.yml
-name: CMake on multiple platforms
+name: CMake on multiple platforms,  Update README with Current Date
 
 on:
   push:
@@ -73,3 +73,22 @@ jobs:
       # Execute tests defined by the CMake configuration. Note that --build-config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
+
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get current date
+      id: get_date
+      run: |
+        echo "DATE=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
+
+    - name: Update README with current date
+      run: |
+        sed -i "s/{{current_date}}/${{ env.DATE }}/g" README.md
+        git config --global user.email "your-email@example.com"
+        git config --global user.name "Your Name"
+        git commit -am "Update README with current date"
+        git push
