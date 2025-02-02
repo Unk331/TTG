@@ -1,12 +1,20 @@
 #include "Heartbeat.hpp"
-#include <bits/this_thread_sleep.h>
+#include <iostream>
+#include <thread>
 
-void Heartbeat::runPulse() {
+void Heartbeat::runPulse(bool debug) {
     if (!isPulse) {
-        isPulse = true;
-        std::this_thread::sleep_for(std::chrono::milliseconds(20));
+        isPulse = true;  // Lock the pulse update
+
+        // Debugging output
+        if (debug) {
+            debugOut = "Pulse value: " + std::to_string(pulse);  // Set debug output
+            std::cout << debugOut << std::endl;  // Print debug output to console
+        }
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(20)); // Short delay
         pulse += 1;  // Increment pulse
-        isPulse = false;
+        isPulse = false;  // Unlock pulse update
     }
 }
 
@@ -24,4 +32,12 @@ bool Heartbeat::getIsPulse() const {
 
 void Heartbeat::setIsPulse(bool isPulse) {
     this->isPulse = isPulse;
+}
+
+std::string Heartbeat::getDebugOut() const {
+    return debugOut;
+}
+
+void Heartbeat::setDebugOut(const std::string& debugOut) {
+    this->debugOut = debugOut;
 }

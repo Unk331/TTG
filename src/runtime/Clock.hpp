@@ -1,21 +1,21 @@
-#ifndef CLOCK_HPP
-#define CLOCK_HPP
+// #ifndef CLOCK_HPP
+// #define CLOCK_HPP
 
-class Clock
-{
-private:
-    /* data */
-public:
-    Clock(/* args */);
-    ~Clock();
-};
+// class Clock
+// {
+// private:
+//     /* data */
+// public:
+//     Clock(/* args */);
+//     ~Clock();
+// };
 
-Clock::Clock(/* args */)
-{
-}
+// Clock::Clock(/* args */)
+// {
+// }
 
-Clock::~Clock()
-{
-}
+// Clock::~Clock()
+// {
+// }
 
-#endif //CLOCK_HPP
+// #endif //CLOCK_HPP
