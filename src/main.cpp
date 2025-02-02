@@ -1,9 +1,23 @@
 #include <iostream>
+#include "runtime/Heartbeat.hpp"
+#include <thread>
 
 int main() {
-    std::string s;
-    std::cout << "Enter a string: ";
-    std::cin >> s;
-    std::cout << s << std::endl;
+    Heartbeat heartbeat;
+
+    // Test with debugging enabled
+    for (int i = 0; i < 5; ++i) {
+        heartbeat.runPulse(true);  // Pass 'true' to enable debugging output
+        std::cout << "Current Pulse: " << heartbeat.getPulse() << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Wait for a while before next pulse
+    }
+
+    // Test without debugging output
+    for (int i = 0; i < 5; ++i) {
+        heartbeat.runPulse(false);  // Pass 'false' to disable debugging output
+        std::cout << "Current Pulse: " << heartbeat.getPulse() << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Wait for a while before next pulse
+    }
+
     return 0;
 }
