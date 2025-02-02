@@ -9,7 +9,7 @@ private:
     int pulse = 0;  // Initialize member variables
     bool isPulse = false;
     bool debug = false; // Using bool instead of int for debug
-    std::string name = "DebugOut";
+    // std::string name = "DebugOut";
     std::string debugOut; // The string to hold debug output
 
 public:
