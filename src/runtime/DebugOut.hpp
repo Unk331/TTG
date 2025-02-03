@@ -4,17 +4,17 @@
 #include <string>
 #include <iostream>
 
-class DebugOut 
+class DebugOut
 
 {
 private:
     int enableDebugModule;
     std::string DebugOut;
+
 public:
     void setDebugOut(std::string DebugOut);
     void printOut();
     int getEnableDebugModule();
     void setEnableDebugModule(int enableDebugModule);
-    
 };
-#endif //DEBUGOUT_HPP
+#endif // DEBUGOUT_HPP
