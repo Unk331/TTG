@@ -1,20 +1,18 @@
 #include <iostream>
-#include "runtime/Heartbeat.hpp"
-#include "runtime/Wait.h"
-#include <thread>
-
-
-#include <iostream>
-#include "logic/RNG.hpp"
+#include "logic/DiceRoller.hpp"
 
 int main() {
-    RNG rng;
-    rng.init();
+    DiceRoller roller;
+    roller.init();
 
-    std::cout << "Seed: " << rng.get_seed() << std::endl;
-    std::cout << "Random Number: " << rng.generate_RNG_OUT(false) << std::endl;
-
-    std::cout << rng.getDebugOut() << std::endl;
+    std::cout << "Rolling all dice...\n";
+    roller.rollD4(true);
+    roller.rollD6(true);
+    roller.rollD8(true);
+    roller.rollD10(true);
+    roller.rollD12(true);
+    roller.rollD20(true);
+    roller.rollD100(true);
 
     return 0;
 }
