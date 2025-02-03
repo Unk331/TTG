@@ -9,7 +9,7 @@ void Heartbeat::runPulse(bool debug) {
         // Debugging output
         if (debug) {
             debugOut = "Pulse value: " + std::to_string(pulse);  // Set debug output
-            std::cout << debugOut << std::endl;  // Print debug output to console
+            Heartbeat::setDebugOut(debugOut);
         }
 
         std::this_thread::sleep_for(std::chrono::milliseconds(20)); // Short delay
